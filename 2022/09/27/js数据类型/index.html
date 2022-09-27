@@ -1,332 +1,198 @@
-<!DOCTYPE html>
-<html 
-	lang="zh-CN">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-<link rel="stylesheet" href="/css/layout.css">
+<!DOCTYPE HTML>
+<html>
 
-		
-		<title> js数据类型 -  大萌coder</title>
-		<link rel="stylesheet" href="https://unpkg.com/mdui@1.0.2/dist/css/mdui.min.css" />
-		<script src="https://unpkg.com/mdui@1.0.2/dist/js/mdui.min.js"></script>
-		<!-- lazyload -->
-		<script src="https://unpkg.com/lazysizes@5.1.0/lazysizes.min.js"></script>
-		<!-- smooth-scrolling -->
-		<script src="https://unpkg.com/smooth-scrolling.js@latest"></script>
-		<!-- highlight -->
-		<link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/atom-one-dark.min.css" />
-		<script src="//unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
-		<!-- 预置 kiraicon -->
-		<link rel="stylesheet" href="/lib/iconfont/iconfont.css" crossorigin />
-		<link
-			rel="shortcut icon"
-			href="https://raw.githubusercontent.com/ch1ny/PictureCDN/master/others/116359b4ccf19917.jpg"
-			type="image/png"
-		/>
-	<meta name="generator" content="Hexo 6.3.0"></head>
-
-	<body>
-		<div
-			class="kira-background"
-			style="background-image: url('https://raw.githubusercontent.com/ch1ny/PictureCDN/master/others/f0d5cc34c6e5aa7.jpg')"
-		></div>
-		<div class="kira-header">
-    <a
-        class="kira-drawer-button mdui-ripple"
-        title="导航栏"
-        onclick="document.querySelector('.kira-sidebar-modal').classList.add('show');document.querySelector('.kira-sidebar#sidebar').classList.add('show');"
-    >
-        <i class="kirafont icon-menu"></i>
-    </a>
-    <a href="/" title="大萌coder">
-        <img
-			src="https://raw.githubusercontent.com/ch1ny/PictureCDN/master/others/116359b4ccf19917.jpg"
-			alt="大萌c"
-		/>
-    </a>
-</div>
-		<div class="kira-body">
-			<div class="kira-sidebar" id="sidebar">
-	<div class="kira-avatar mdui-ripple">
-		<a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/ch1ny/PictureCDN/master/others/116359b4ccf19917.jpg" title="大萌c">
-			<img
-				src="https://raw.githubusercontent.com/ch1ny/PictureCDN/master/others/116359b4ccf19917.jpg"
-				alt="大萌c"
-			/>
-		</a>
-	</div>
-	<div class="kira-count">
-		<div><span>文章</span>2</div>
-		<div><span>标签</span>2</div>
-		<div><span>分类</span>2</div>
-	</div>
-	<div class="kira-list">
-		
-		<a
-			class="kira-list-item mdui-ripple false"
-			href="/"
-			title="回到首页"
-		>
-			<i
-				class="kirafont icon-home"
-			></i>
-			<div class="kira-list-item-content">回到首页</div>
-		</a>
-		
-		<a
-			class="kira-list-item mdui-ripple false"
-			href="/archive.html"
-			title="文章归档"
-		>
-			<i
-				class="kirafont icon-container"
-			></i>
-			<div class="kira-list-item-content">文章归档</div>
-		</a>
-		
-		<a
-			class="kira-list-item mdui-ripple false"
-			href="/about.html"
-			title="关于本人"
-		>
-			<i
-				class="kirafont icon-user"
-			></i>
-			<div class="kira-list-item-content">关于本人</div>
-		</a>
-		
-		<a
-			class="kira-list-item mdui-ripple false"
-			href="/friends.html"
-			title="我的朋友"
-		>
-			<i
-				class="kirafont icon-team"
-			></i>
-			<div class="kira-list-item-content">我的朋友</div>
-		</a>
-		
-	</div>
-	<aside id="kira-sidebar">
-		 <div class="kira-widget-wrap">
-	<div class="kira-widget kira-social">
-		<a
-			class="mdui-ripple"
-			href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=1056317718&website=www.oicqzone.com"
-			target="_blank"
-			mdui-tooltip="{content: 'QQ'}"
-			style="
-				color: rgb(49, 174, 255);
-				background-color: rgba(49, 174, 255, .1);
-			"
-		>
-			<i
-				class="kirafont icon-QQ"
-			></i> </a
-		><a
-			class="mdui-ripple"
-			href="https://space.bilibili.com/9882670"
-			target="_blank"
-			mdui-tooltip="{content: '哔哩哔哩'}"
-			style="
-				color: rgb(231, 106, 141);
-				background-color: rgba(231, 106, 141, .15);
-			"
-		>
-			<i
-				class="kirafont icon-bilibili"
-			></i> </a
-		><a
-			class="mdui-ripple"
-			href="https://github.com/yixusuying/"
-			target="_blank"
-			mdui-tooltip="{content: 'GitHub'}"
-			style="
-				color: rgb(25, 23, 23);
-				background-color: rgba(25, 23, 23, .15);
-			"
-		>
-			<i
-				class="kirafont icon-github"
-			></i> </a
-		><a
-			class="mdui-ripple"
-			href="/icon-gitee"
-			target="_blank"
-			mdui-tooltip="{content: 'Gitee'}"
-			style="
-				color: rgba(165, 15, 15, .15);
-				background-color: ;
-			"
-		>
-			<i
-				class="kirafont rgb(165, 15, 15)"
-			></i> </a
-		>
-	</div>
-</div>
-  
-<div class="kira-widget-wrap">
-  <h3 class="kira-widget-title">分类</h3>
-  <div class="kira-widget">
-
-    <ul class="category-list">
-
-      
-
-
-      
-
-      
-
-      <li class="category-list-item">
-        <a class="category-list-link" href="/categories/redpoint/">redpoint</a>
-        <span class="category-list-count">1</span>
-      </li>
-
-      
-
-      <li class="category-list-item">
-        <a class="category-list-link" href="/categories/红宝书/">红宝书</a>
-        <span class="category-list-count">1</span>
-      </li>
-
-      
-    </ul>
-
-  </div>
-</div>
-  
-<div class="kira-widget-wrap">
-	<div id="randomtagcloud" class="kira-widget tagcloud kira-rainbow"><a href="/tags/%E6%A0%87%E7%AD%BE1/" style="font-size: 10px;">标签1</a> <a href="/tags/%E6%A0%87%E7%AD%BE2-%E5%8F%AF%E9%80%89/" style="font-size: 10px;">标签2 (可选)</a></div>
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="https://yixusuying.github.io/img/head.jpg"/>
+	<link rel="shortcut icon" href="https://yixusuying.github.io/img/head.jpg">
 	
-</div>
+			    <title>
+    大萌coder
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="大萌coder" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
 
- 
-	</aside>
-	<div class="kira-copyright">
-		&copy; 2022
-		<a href="/">大萌c</a
-		>
-		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &
-		<!-- TODO: github 链接 -->
-		<a href="https://github.com/ch1ny/kira-hexo/" target="_blank">Kira-Hexo</a>
-		<br />
-		
-			<a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备******号</a>
-		
-		
-	</div>
-</div>
-<div class="kira-sidebar-modal" id="sidebar-modal" onclick="(function(self) {
-	self.classList.remove('show');
-	document.querySelector('.kira-sidebar.show#sidebar').classList.remove('show');
-})(this)"></div>
-			<div class="kira-content">
-				<div id="kira-top-header"></div>
-				<div class="kira-main-content">
-					
-<link rel="stylesheet" href="/css/kira-image.css">
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
 
-<script src="/js/kira-image.js"></script>
-<div class="kira-image">
-    <div class="kira-image-modal">
-        <div class="kira-image-header">
-            <div class="kira-image-counter"></div>
-            <div class="kira-image-title"></div>
-            <div class="kira-image-operation">
-                <div class="kira-image-operation-button" id="kira-image-operation-button-zoom">
-                    <i class="kirafont icon-zoom-in"></i>
-                </div>
-                <div class="kira-image-operation-button" id="kira-image-operation-button-close">
-                    <i class="kirafont icon-close"></i>
-                </div>
-            </div>
-        </div>
-        <div class="kira-image-container">
-            <div class="kira-image-prev-button-panel">
-                <div class="kira-image-exchange-button">
-                    <i class="kirafont icon-left"></i>
-                </div>
-            </div>
-            <div class="kira-image-list">
-                <div class="kira-image-prev">
-                    <img />
-                </div>
-                <div class="kira-image-now">
-                    <img />
-                </div>
-                <div class="kira-image-next">
-                    <img />
-                </div>
-            </div>
-            <div class="kira-image-next-button-panel">
-                <div class="kira-image-exchange-button">
-                    <i class="kirafont icon-right"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="kira-post">
-	<article>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 6.3.0"></head>
+    
 		
-		<div
-			class="kira-post-cover"
-			style="padding-bottom: '56.25%'"
-		>
-			<img
-				data-src="https://raw.githubusercontent.com/ch1ny/PictureCDN/master/others/f0d5cc34c6e5aa7.jpg"
-				data-sizes="auto"
-				alt="js数据类型"
-				class="lazyload"
-			/>
-			<h1>js数据类型</h1>
-		</div>
-		
-		<div class="kira-post-meta kira-rainbow" style="margin:10px 0!important;">
-			<a><i class="kirafont icon-calendar-fill"></i>2022年09月27日</a>
-			<a><i class="kirafont icon-areachart"></i>1.1k 字</a>
-			<a><i class="kirafont icon-time-circle-fill"></i>大概 4 分钟</a>
-		</div>
-		<h2><span id="按照ecmascript有六种基本数据类型undefinednullbooleannumberstringsymboles6新增object">按照ECMAScript,有六种基本数据类型(undefined,null,Boolean,Number,String,Symbol(ES6新增),Object)</span></h2><pre><code>严格来说函数在ECMAScript中被认为是对象,并不代表一种数据类型.
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Epoch</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/redpoint/">redpoint</a></li><li><a class="category-link" href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">红宝书</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">归档</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="archive-link" href="/archives/2022/09/">九月 2022</a>
+	                    </ul>
+	        </li>
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about" title="关于我">
+		                关于我
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery" title="瞬间">
+		                瞬间
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tags" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/yixusuying" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="qq" href="https://user.qzone.qq.com/735490965/" target="_blank" rel="noopener">
+                            <i class="icon fa fa-qq"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://bing.com/th?id=OHR.ChineseNewYearEve_ZH-CN1901922324_1920x1080.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >js数据类型</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="按照ECMAScript-有六种基本数据类型-undefined-null-Boolean-Number-String-Symbol-ES6新增-Object"><a href="#按照ECMAScript-有六种基本数据类型-undefined-null-Boolean-Number-String-Symbol-ES6新增-Object" class="headerlink" title="按照ECMAScript,有六种基本数据类型(undefined,null,Boolean,Number,String,Symbol(ES6新增),Object)"></a>按照ECMAScript,有六种基本数据类型(undefined,null,Boolean,Number,String,Symbol(ES6新增),Object)</h2><pre><code>严格来说函数在ECMAScript中被认为是对象,并不代表一种数据类型.
 typeof这个操作符就可以区分函数和其他对象
 typeof null返回的是object,这是因为null会被认为是一个空对象的引用
 </code></pre>
-<h2><span id="undefined-类型">undefined 类型</span></h2><pre><code>undefined类型只有一个值就是undefined,当使用var或者let定义了变量但是没有赋值时,就相当于给变量赋了undefined
+<h2 id="undefined-类型"><a href="#undefined-类型" class="headerlink" title="undefined 类型"></a>undefined 类型</h2><pre><code>undefined类型只有一个值就是undefined,当使用var或者let定义了变量但是没有赋值时,就相当于给变量赋了undefined
 </code></pre>
 <ul>
 <li>其实undefined的存在就是为了区分空对象指针(null)和未初始化的变量的区别<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> message</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message == <span class="literal">undefined</span>) <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> message = <span class="literal">undefined</span> <span class="comment">//没必要</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(message == <span class="literal">undefined</span>) <span class="comment">//true</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> message;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(message)&#123;</span><br><span class="line">    <span class="comment">//这个代码块不会被执行</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!message)&#123;</span><br><span class="line">    <span class="comment">//这个会执行</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(a)&#123;</span><br><span class="line">    <span class="comment">//报错</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="null-类型">null 类型</span></h2><pre><code>null类型也是只有一个值,就是null
+<h2 id="null-类型"><a href="#null-类型" class="headerlink" title="null 类型"></a>null 类型</h2><pre><code>null类型也是只有一个值,就是null
 从逻辑上说,null还表示一个空对象指针,也就是为什么typeof null 返回obj的原因
 </code></pre>
 <ul>
 <li>定义空对象的初始值最好附上null,不然不好和undefined区分</li>
 </ul>
-<h2><span id="number类型">Number类型</span></h2><pre><code>八进制(第一个数必须是0,后面是相应的八进制数字(0~7)),严格模式下无效,直接报错
+<h2 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h2><pre><code>八进制(第一个数必须是0,后面是相应的八进制数字(0~7)),严格模式下无效,直接报错
 十六进制
 </code></pre>
 <ul>
 <li>由于内存的限制,ES中的数字有范围,Number.MIN_VALUE与Number.MAX_VALUE之间,可以用isFinite这个函数测试输入的数字是否在ES的数字范围</li>
 </ul>
-<h3><span id="浮点数">浮点数</span></h3><pre><code>储存浮点的内存空间是储存整数的两倍,ES会想方设法的把浮点数转换成整数
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><pre><code>储存浮点的内存空间是储存整数的两倍,ES会想方设法的把浮点数转换成整数
 不要测试某个特定的浮点值,例如:a + b = 0.3
 因为Es使用了IEEE754数值
 </code></pre>
-<h3><span id></span></h3><pre><code>IEEE二进制浮点数算术标准（IEEE 754）是20世纪80年代以来最广泛使用的浮点数运算标准，为许多CPU与浮点运算器所采用。这个标准定义了表示浮点数的格式（包括负零-0）与反常值（denormal number）），一些特殊数值（无穷（Inf）与非数值（NaN）），以及这些数值的“浮点数运算符”；它也指明了四种数值舍入规则和五种例外状况（包括例外发生的时机与处理方式）。
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre><code>IEEE二进制浮点数算术标准（IEEE 754）是20世纪80年代以来最广泛使用的浮点数运算标准，为许多CPU与浮点运算器所采用。这个标准定义了表示浮点数的格式（包括负零-0）与反常值（denormal number）），一些特殊数值（无穷（Inf）与非数值（NaN）），以及这些数值的“浮点数运算符”；它也指明了四种数值舍入规则和五种例外状况（包括例外发生的时机与处理方式）。
 </code></pre>
-<h3><span id></span></h3><pre><code>IEEE 754:
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><pre><code>IEEE 754:
 规定了四种表示浮点数值的方式：单精确度（32位）、双精确度（64位）、延伸单精确度（43比特以上，很少使用）与延伸双精确度（79比特以上，通常以80位实现）。只有32位模式有强制要求，其他都是选择性的。大部分编程语言都有提供IEEE浮点数格式与算术，但有些将其列为非必需的。例如，IEEE 754问世之前就有的C语言，有包括IEEE算术，但不算作强制要求（C语言的float通常是指IEEE单精确度，而double是指双精确度）。
 </code></pre>
-<h3><span id></span></h3><pre><code>延伸阅读:
+<h3 id="-2"><a href="#-2" class="headerlink" title=""></a></h3><pre><code>延伸阅读:
 IEEE 754由1985年电子与电气工程师协会IEEE制定，用以表示浮点数的格式，包括0、INF、NAN等，以及这些数值的浮点数运算符。标准的指定便于不同处理器之间程序的移植及研制更为复杂的数值运算程序等。
 </code></pre>
-<h3><span id="string类型">String类型</span></h3><pre><code>字符串类型表示16为的Unicode字符序列
+<h3 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h3><pre><code>字符串类型表示16为的Unicode字符序列
 可以用双引号,单引号,反引号表示
 字符串数据类型包含一些字符字面量(如/n:换行),表示非打印字符或有其他用途的字符
 字符串不可变,要更改变量当中的字符串,必须先销毁原字符串,然后将新的字符串保存到这个变量
@@ -341,66 +207,108 @@ IEEE 754由1985年电子与电气工程师协会IEEE制定，用以表示浮点�
 </li>
 </ul>
 
-	</article>
+            </div>
 
-	 
-    <div class="kira-post-copyright">
-        <strong>本文作者：</strong>大萌c<br>
-        <strong>本文链接：</strong><a href="https://yixusuying.github.io/2022/09/27/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" title="https:&#x2F;&#x2F;yixusuying.github.io&#x2F;2022&#x2F;09&#x2F;27&#x2F;js数据类型&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;yixusuying.github.io&#x2F;2022&#x2F;09&#x2F;27&#x2F;js数据类型&#x2F;</a><br>
-        
-            <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-        
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://yixusuying.github.io/2022/09/27/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://yixusuying.github.io/2022/09/27/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
     </div>
+</body>
 
-  
-	<div class="kira-post-nav">
-		<nav class="post-nav">
-			  
-			<!-- 先找到与当前文字相同的目录 -->
-			   
-			<!-- 在找到当前文章所在的 index -->
-			              
-		</nav>
-	</div>
-	
-	<div class="kira-post-meta kira-rainbow">
-		
-			<a class="kirafont icon-appstore-fill -link" href="/categories/%E7%BA%A2%E5%AE%9D%E4%B9%A6/">红宝书</a>
-		
-		
-	</div>
-	
-	<div class="kira-post-footer">
-	<link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css" />
-	<div id="gitalk"></div>
-	<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-	<script type="text/javascript">
-		var gitalk = new Gitalk({
-			clientID: '-id-',
-			clientSecret: '-key-',
-			id: 'js数据类型',
-			repo: '-issue repo name-',
-			owner: '-your github username-',
-			admin: '-your github username-',
-			title: '',
-		});
-		gitalk.render('gitalk');
-	</script>
 
-</div>
-	
-</div>
 
-				</div>
-			</div>
-			<div class="kira-right-column">
-	<a onclick="document.querySelector('#kira-top-header').scrollIntoView({behavior: 'smooth'});" class="kira-backtotop" aria-label="回到顶部" title="回到顶部">
-		<button class="mdui-fab mdui-ripple">
-			<i class="kirafont icon-caret-up"></i>
-		</button>
-	</a>
-</div>
-
-		</div>
-	</body>
+ 	
 </html>

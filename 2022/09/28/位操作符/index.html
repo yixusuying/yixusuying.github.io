@@ -64,8 +64,7 @@
     <script src="/js/main.js"></script>
 	
 <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
     
 		
 <!-- Layouts -->
@@ -155,12 +154,23 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://yixusuying.github.io/img/0928.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://yixusuying.github.io/img/位运算符.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >位操作符</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                
+                <h2 id="位操作符用于数值的底层操作"><a href="#位操作符用于数值的底层操作" class="headerlink" title="位操作符用于数值的底层操作"></a>位操作符用于数值的底层操作</h2><h3 id="即操作内存中表示数据的比特-位"><a href="#即操作内存中表示数据的比特-位" class="headerlink" title="即操作内存中表示数据的比特(位)"></a>即操作内存中表示数据的比特(位)</h3><pre class="line-numbers language-js"><code class="language-js">    es中所有的数值都是以IEEE <span class="token number">754</span> <span class="token number">64</span>位格式存储
+    进行位操作的时候<span class="token punctuation">,</span>先把<span class="token number">64</span>位的数值转换成<span class="token number">32</span>位
+    再进行位操作<span class="token punctuation">,</span>得到的结果再转换成<span class="token number">64</span>位
+    <span class="token number">NaN</span> 和 <span class="token number">Infinity</span>在位操作中会被当做<span class="token number">0</span>处理
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>负值以一种二补数的二进制编码存储,一个数值的二补数
+1.确定绝对值的二进制
+2.找数值的一补数(即反转二进制值)
+3.给补数加一
+</code></pre>
+<h3 id="所以对于开发者而言-就好像只有32位整数一样"><a href="#所以对于开发者而言-就好像只有32位整数一样" class="headerlink" title="所以对于开发者而言,就好像只有32位整数一样"></a>所以对于开发者而言,就好像只有32位整数一样</h3><p>数值转换如10010 &#x3D; 2^0+2^1+0+0+2^4 &#x3D; 18</p>
+<h3 id="如果将位操作应用到非数值-则首先使用Number-转换-这个过程自发的"><a href="#如果将位操作应用到非数值-则首先使用Number-转换-这个过程自发的" class="headerlink" title="如果将位操作应用到非数值,则首先使用Number()转换(这个过程自发的)"></a>如果将位操作应用到非数值,则首先使用Number()转换(这个过程自发的)</h3>
             </div>
 
             <!-- Post Comments -->

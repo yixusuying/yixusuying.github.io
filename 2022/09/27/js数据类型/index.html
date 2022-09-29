@@ -64,8 +64,7 @@
     <script src="/js/main.js"></script>
 	
 <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><script src="/js/prism.js"></script>
-<script src="/js/prism-line-numbers.min.js"></script></head>
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
     
 		
 <!-- Layouts -->
@@ -240,6 +239,12 @@ num<span class="token punctuation">.</span><span class="token function">toString
 <p>可以换行定义字符串,html 模板<br>可以进行模板插值${},插入的值都会强行 toString 转型为字符串</p>
 </li>
 </ul>
+<h3 id="boolean类型"><a href="#boolean类型" class="headerlink" title="boolean类型"></a>boolean类型</h3><pre><code>true和false,true不等于1,false不等于0
+</code></pre>
+<h3 id="流程控制语句的条件会自动执行Boolean"><a href="#流程控制语句的条件会自动执行Boolean" class="headerlink" title="流程控制语句的条件会自动执行Boolean()"></a>流程控制语句的条件会自动执行Boolean()</h3><pre><code>string--&gt;非空字符串为true
+Number--&gt;非零数值(包括无穷值)为true
+object--&gt;任意对象为true除了null
+</code></pre>
 
             </div>
 
